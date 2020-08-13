@@ -6,6 +6,8 @@ import cn.smallbun.screw.core.engine.EngineFileType;
 import cn.smallbun.screw.core.engine.EngineTemplateType;
 import cn.smallbun.screw.core.execute.DocumentationExecute;
 import cn.smallbun.screw.core.process.ProcessConfig;
+import io.github.yedaxia.apidocs.Docs;
+import io.github.yedaxia.apidocs.DocsConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -79,6 +81,23 @@ class ScrewApplicationTests {
                // .ignoreTablePrefix(ignorePrefix)
                 //忽略表后缀
                 //.ignoreTableSuffix(ignoreSuffix).build();
+    }
+
+    /**
+     * @Description  JApiDocs生成接口文档
+     * @Param []
+     * @return void
+     * @Date 2020/8/13 15:00
+     **/
+    @Test
+    void Api(){
+        DocsConfig config = new DocsConfig();
+        config.setProjectPath("E:\\个人文件\\project\\screw\\src\\main\\java\\com\\atoz\\screw"); // 项目根目录
+        config.setProjectName("screw"); // 项目名称
+        config.setApiVersion("V1.0");       // 声明该API的版本
+        config.setDocsPath("E:\\个人文件\\project\\screw\\doc"); // 生成API 文档所在目录
+        config.setAutoGenerate(Boolean.TRUE);  // 配置自动生成
+        Docs.buildHtmlDocs(config); // 执行生成文档
     }
 }
 
