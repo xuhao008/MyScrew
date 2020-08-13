@@ -23,7 +23,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -60,6 +63,24 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <!-- hasor-spring 负责 Spring 和 Hasor 框架之间的整合。-->
+        <dependency>
+            <groupId>net.hasor</groupId>
+            <artifactId>hasor-spring</artifactId>
+            <version>4.1.3</version>
+        </dependency>
+        <!--hasor-dataway 是工作在 Hasor 之上，利用 hasor-spring 我们就可以使用 dataway了。-->
+        <dependency>
+            <groupId>net.hasor</groupId>
+            <artifactId>hasor-dataway</artifactId>
+            <version>4.1.3-fix20200414</version><!-- 4.1.3 包存在UI资源缺失问题 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
