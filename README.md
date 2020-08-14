@@ -70,10 +70,12 @@ public class ExampleModule implements SpringModule {
 }
 ```
 ### 需要在properties中配置相关属性
+> 注意：要在你的数据库里面新增两张表，在刚刚导入的jar包里面有sql文件，你可以打开idea导入的jar获取到
+
 最后我们通过访问http://127.0.0.1:8080/interface-ui，就可以访问了
 
 # 3、集成JApiDocs生成接口文档
-我们可以通过最少的配置生成项目的接口文档，对项目的侵入性不高，但是它是生成的静态的文档
+我们可以通过最少的配置生成项目的接口文档，对项目的侵入性不高，但是它是生成的静态的文档     
 快速上手：https://japidocs.agilestudio.cn/#/zh-cn/
 
 ### 需要导入maven坐标
