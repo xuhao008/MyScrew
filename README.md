@@ -1,3 +1,9 @@
+#项目在线访问地址
+springboot-admin访问监控:http://139.9.118.101:8888  
+scew项目：http://139.9.118.101:8081    
+swagger地址：http://139.9.118.101:8081/doc.html    
+dataway接口配置：http://139.9.118.101:8080/interface-ui/#/  
+
 # 1、集成SCREW数据库文档生成
 
 ### 我们可以通过SCREM两种方式生成文档
