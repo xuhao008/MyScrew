@@ -1,8 +1,8 @@
 #项目在线访问地址
 springboot-admin访问监控:http://139.9.118.101:8888  
-scew项目：http://139.9.118.101:8080    
-swagger地址：http://139.9.118.101:8080/doc.html    
-dataway接口配置：http://139.9.118.101:8080/interface-ui/#/  
+scew项目：http://139.9.118.101:8081      
+swagger地址：http://139.9.118.101:8081/doc.html    
+dataway接口配置：http://139.9.118.101:8081/interface-ui/#/  
 
 # 1、集成SCREW数据库文档生成
 
@@ -78,7 +78,7 @@ public class ExampleModule implements SpringModule {
 ### 需要在properties中配置相关属性
 > 注意：要在你的数据库里面新增两张表，在刚刚导入的jar包里面有sql文件，你可以打开idea导入的jar获取到
 
-最后我们通过访问http://127.0.0.1:8080/interface-ui/#/
+最后我们通过访问http://127.0.0.1:8081/interface-ui/#/
 
 # 3、集成JApiDocs生成接口文档
 我们可以通过最少的配置生成项目的接口文档，对项目的侵入性不高，但是它是生成的静态的文档     
@@ -181,7 +181,7 @@ public class SwaggerConfig {
 }
 ```
 
-最后运行项目我们访问http://localhost:8080/doc.html
+最后运行项目我们访问http://localhost:8081/doc.html
 就可以查看文档了
 
 # 5、集成springbootAdmin服务监控
