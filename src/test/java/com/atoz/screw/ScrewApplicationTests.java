@@ -99,5 +99,6 @@ class ScrewApplicationTests {
         config.setAutoGenerate(Boolean.TRUE);  // 配置自动生成
         Docs.buildHtmlDocs(config); // 执行生成文档
     }
+
 }
 

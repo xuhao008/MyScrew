@@ -1,5 +1,7 @@
 package com.atoz.screw.controller;
 
+import com.atoz.screw.enums.BusinessType;
+import com.atoz.screw.log.Log;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,7 @@ public class DemoController {
      * @return java.lang.String
      * @Date 2020/8/13 15:00
      **/
+    @Log(title = "demo",businessType= BusinessType.OTHER)
     @GetMapping("/find")
     @ApiOperation(value = "获取信息",notes = "null")
     public String findXx(){

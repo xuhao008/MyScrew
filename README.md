@@ -72,7 +72,7 @@ public class ExampleModule implements SpringModule {
 ### 需要在properties中配置相关属性
 > 注意：要在你的数据库里面新增两张表，在刚刚导入的jar包里面有sql文件，你可以打开idea导入的jar获取到
 
-最后我们通过访问http://127.0.0.1:8080/interface-ui，就可以访问了
+最后我们通过访问http://127.0.0.1:8080/interface-ui/#/
 
 # 3、集成JApiDocs生成接口文档
 我们可以通过最少的配置生成项目的接口文档，对项目的侵入性不高，但是它是生成的静态的文档     
@@ -175,5 +175,60 @@ public class SwaggerConfig {
 }
 ```
 
-最后运行项目我们访问http://localhost:8080/doc.html就可以查看文档了
+最后运行项目我们访问http://localhost:8080/doc.html
+就可以查看文档了
+
+# 5、集成springbootAdmin服务监控
+Spring Boot Admin是一个开源社区项目，用于管理和监控SpringBoot应用程序。 应用程序作为Spring Boot Admin Client向为Spring Boot Admin Server注册（通过HTTP）或使用SpringCloud注册中心（例如Eureka，Consul）发现
+创建springboot-admin工程作为监控服务
+首先导入spring-boot-admin-starter-server的Maven坐标
+```
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+```
+然后在工程的启动类SpringBootAdminApplication加上@EnableAdminServer注解，开启AdminServer的功能      
+在工程的配置文件application.yml中配置程序名和程序的端口
+```yml
+spring:
+  application:
+    name: admin-server
+server:
+  port: 8888
+```
+
+然后是在本工程里面创建客户端工程
+导入spring-boot-admin-starter-client的Maven坐标依赖
+```
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+```
+在工程的配置文件application.yml中配置admin-server注册的地址为http://localhost:8888，最后暴露自己的actuator的所有端口信息，具体配置如下
+```yml
+spring.boot.admin.client.url=http://localhost:8888
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always
+```
+最后启动两个工程，访问：http://localhost:8888/
+
+
+# 6、集成AOP实现操作日志的保存
+实现过程就不具体讲了，大概的过程是：
+编写自定义注解Log，通过在请求的controller方法上面添加log注解，输入部分数据，如何编写切面类，通过@Pointcut，@AfterReturning和@AfterThrowing
+来获取方法数据，或者方法异常信息，通过工具类获取请求的数据，和自定义注解定义的数据保存到实体，最后通过调用service方法，进行数据库储存操作，实现异步日志信息保存。
+
+
 
