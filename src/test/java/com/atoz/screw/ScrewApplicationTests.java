@@ -15,8 +15,6 @@ import org.springframework.context.ApplicationContext;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @SpringBootTest
 class ScrewApplicationTests {

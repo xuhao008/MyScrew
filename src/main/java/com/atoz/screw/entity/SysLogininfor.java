@@ -1,6 +1,6 @@
 package com.atoz.screw.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -9,8 +9,8 @@ import java.util.Date;
  * 
  * @author hao.xu
  */
-public class SysLogininfor extends BaseEntity
-{
+@Data
+public class SysLogininfor{
     private static final long serialVersionUID = 1L;
 
     /** ID */
@@ -30,64 +30,4 @@ public class SysLogininfor extends BaseEntity
 
     /** 访问时间 */
     private Date accessTime;
-
-    public Long getInfoId()
-    {
-        return infoId;
-    }
-
-    public void setInfoId(Long infoId)
-    {
-        this.infoId = infoId;
-    }
-
-    public String getUserName()
-    {
-        return userName;
-    }
-
-    public void setUserName(String userName)
-    {
-        this.userName = userName;
-    }
-
-    public String getStatus()
-    {
-        return status;
-    }
-
-    public void setStatus(String status)
-    {
-        this.status = status;
-    }
-
-    public String getIpaddr()
-    {
-        return ipaddr;
-    }
-
-    public void setIpaddr(String ipaddr)
-    {
-        this.ipaddr = ipaddr;
-    }
-
-    public String getMsg()
-    {
-        return msg;
-    }
-
-    public void setMsg(String msg)
-    {
-        this.msg = msg;
-    }
-
-    public Date getAccessTime()
-    {
-        return accessTime;
-    }
-
-    public void setAccessTime(Date accessTime)
-    {
-        this.accessTime = accessTime;
-    }
 }

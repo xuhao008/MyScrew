@@ -5,19 +5,20 @@ import com.atoz.screw.log.Log;
 import com.atoz.screw.utils.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @description:
  * @author: hao.xu
- * @create: 2020-08-13 14:59
+ * @create: 2020-10-12 17:18
  */
 
 @RestController
-@RequestMapping("/demo")
-@Api(value = "项目demo", tags = "项目demo接口")
-public class DemoController {
-    
+@RequestMapping("/demo2")
+@Api(value = "demo2")
+public class Demo2Controller {
     /**
      * @Description 查询信息
      * @Param []
@@ -29,13 +30,5 @@ public class DemoController {
     @ApiOperation(value = "测试OK",notes = "null")
     public R findXx(){
         return R.ok();
-    }
-
-    @PostMapping("/ins")
-    @ApiOperation(value = "测试新增",notes = "name姓名")
-    @Log(title = "测试新增",businessType = BusinessType.INSERT)
-    public R insertTest(@RequestParam String name){
-        System.out.println("name"+name);
-        return R.ok(name,"成功");
     }
 }

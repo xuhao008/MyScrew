@@ -3,12 +3,11 @@ package com.atoz.screw.log;
 import com.alibaba.fastjson.JSON;
 import com.atoz.screw.entity.SysOperLog;
 import com.atoz.screw.enums.BusinessStatus;
-import com.atoz.screw.service.LogService;
+import com.atoz.screw.service.LogSysService;
 import com.atoz.screw.utils.IpUtils;
 import com.atoz.screw.utils.ServletUtils;
 import com.atoz.screw.utils.StringUtils;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 /**
  * 操作日志记录处理
@@ -37,12 +37,11 @@ public class LogAspect
     private static final Logger log = LoggerFactory.getLogger(com.atoz.screw.log.LogAspect.class);
     
     @Autowired
-    private LogService logService;
+    private LogSysService logSysService;
 
     // 配置织入点
     @Pointcut("@annotation(com.atoz.screw.log.Log)")
-    public void logPointCut()
-    {
+    public void logPointCut() {
     }
 
     /**
@@ -108,11 +107,11 @@ public class LogAspect
             operLog.setMethod(className + "." + methodName + "()");
             // 设置请求方式
             operLog.setRequestMethod(request.getMethod());
+            operLog.setOperTime(new Date());
             // 处理设置注解上的参数
             getControllerMethodDescription(joinPoint, controllerLog, operLog);
             // 保存数据库
-            log.info("快乐："+JSON.toJSONString(operLog));
-            //logService.saveSysLog(operLog);
+            logSysService.saveSysLog(operLog);
         }
         catch (Exception exp)
         {

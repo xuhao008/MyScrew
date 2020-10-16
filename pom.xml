@@ -140,6 +140,42 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <!--页面模板依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
+
+        <!--任务调度quartz-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -148,57 +184,57 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>cn.smallbun.screw</groupId>
-                <artifactId>screw-maven-plugin</artifactId>
-                <version>1.0.3</version>
-                <dependencies>
-                    <!-- HikariCP -->
-                    <dependency>
-                        <groupId>com.zaxxer</groupId>
-                        <artifactId>HikariCP</artifactId>
-                        <version>3.4.5</version>
-                    </dependency>
-                    <!--mysql driver-->
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.46</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <!--username-->
-                    <username>root</username>
-                    <!--password-->
-                    <password>123456</password>
-                    <!--driver-->
-                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
-                    <!--jdbc url-->
-                    <jdbcUrl>jdbc:mysql://127.0.0.1:3306/demo</jdbcUrl>
-                    <!--生成文件类型-->
-                    <fileType>HTML</fileType>
-                    <!--打开文件输出目录-->
-                    <openOutputDir>false</openOutputDir>
-                    <!--生成模板-->
-                    <produceType>freemarker</produceType>
-                    <!--文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称-->
-                    <!--<docName>studies数据库文档</docName>-->
-                    <!--描述-->
-                    <description>数据库文档生成</description>
-                    <!--版本-->
-                    <version>${project.version}</version>
-                    <!--标题-->
-                    <title>studies数据库文档</title>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--  <plugin>
+                  <groupId>cn.smallbun.screw</groupId>
+                  <artifactId>screw-maven-plugin</artifactId>
+                  <version>1.0.3</version>
+                  <dependencies>
+                      &lt;!&ndash; HikariCP &ndash;&gt;
+                      <dependency>
+                          <groupId>com.zaxxer</groupId>
+                          <artifactId>HikariCP</artifactId>
+                          <version>3.4.5</version>
+                      </dependency>
+                      &lt;!&ndash;mysql driver&ndash;&gt;
+                      <dependency>
+                          <groupId>mysql</groupId>
+                          <artifactId>mysql-connector-java</artifactId>
+                          <version>5.1.46</version>
+                      </dependency>
+                  </dependencies>
+                  <configuration>
+                      &lt;!&ndash;username&ndash;&gt;
+                      <username>root</username>
+                      &lt;!&ndash;password&ndash;&gt;
+                      <password>123456</password>
+                      &lt;!&ndash;driver&ndash;&gt;
+                      <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+                      &lt;!&ndash;jdbc url&ndash;&gt;
+                      <jdbcUrl>jdbc:mysql://127.0.0.1:3306/demo</jdbcUrl>
+                      &lt;!&ndash;生成文件类型&ndash;&gt;
+                      <fileType>HTML</fileType>
+                      &lt;!&ndash;打开文件输出目录&ndash;&gt;
+                      <openOutputDir>false</openOutputDir>
+                      &lt;!&ndash;生成模板&ndash;&gt;
+                      <produceType>freemarker</produceType>
+                      &lt;!&ndash;文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称&ndash;&gt;
+                      &lt;!&ndash;<docName>studies数据库文档</docName>&ndash;&gt;
+                      &lt;!&ndash;描述&ndash;&gt;
+                      <description>数据库文档生成</description>
+                      &lt;!&ndash;版本&ndash;&gt;
+                      <version>${project.version}</version>
+                      &lt;!&ndash;标题&ndash;&gt;
+                      <title>studies数据库文档</title>
+                  </configuration>
+                  <executions>
+                      <execution>
+                          <phase>compile</phase>
+                          <goals>
+                              <goal>run</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+              </plugin>-->
         </plugins>
     </build>
 

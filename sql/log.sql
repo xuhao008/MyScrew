@@ -5,7 +5,7 @@ create table sys_oper_log (
   method            varchar(100)    default ''                 comment '方法名称',
   request_method    varchar(10)     default ''                 comment '请求方式',
   operator_type     int(1)          default 0                  comment '操作类别（0其它 1后台用户 2手机端用户）',
-  oper_name         varchar(50)     default ''                 comment '操作人员',
+  oper_name         varchar(50)     default ''                 comment '操作人员',0
   dept_name         varchar(50)     default ''                 comment '部门名称',
   oper_url          varchar(255)    default ''                 comment '请求URL',
   oper_ip           varchar(50)     default ''                 comment '主机地址',
