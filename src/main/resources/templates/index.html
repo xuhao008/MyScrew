@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>等待信息</div>
+</body>
+<script>
+    var websocket=null;
+    if ('WebSocket' in window){
+        websocket=new WebSocket('ws://127.0.0.1:8081//webSocket');
+    }else {
+        alert("该浏览器不支持！")
+    }
+    websocket.onopen=function (event) {
+        console.log("连接")
+    }
+    websocket.onclose=function (event) {
+        console.log("关闭连接")
+    }
+    websocket.onmessage=function (event) {
+        console.log("收到信息"+event.data)
+        alert(event.data)
+    }
+    websocket.onerror=function (event) {
+        console.log("发生错误")
+    }
+    websocket.onbeforeunload=function (event) {
+        websocket.close();
+    }
+</script>
+</html>

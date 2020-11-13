@@ -4,10 +4,7 @@ import com.atoz.screw.entity.SysUser;
 import com.atoz.screw.log.Log;
 import com.atoz.screw.service.LogLoginService;
 import com.atoz.screw.service.SysUserService;
-import com.atoz.screw.utils.IpUtils;
-import com.atoz.screw.utils.MD5EncryptionUtil;
-import com.atoz.screw.utils.R;
-import com.atoz.screw.utils.ServletUtils;
+import com.atoz.screw.utils.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
@@ -33,6 +30,9 @@ public class UserController {
     @Autowired
     private SysUserService sysUserService;
 
+    @Autowired
+    private WebSocket webSocket;
+
     @PostMapping(value = "/login")
     @ResponseBody
     @ApiOperation(value = "用户登录认证", notes = "username-用户名，password-密码")
@@ -56,9 +56,11 @@ public class UserController {
             return R.fail("用户名或密码不正确！");
         }
         if (subject.isAuthenticated()) {
+            webSocket.sendMessage("登录成功！");
             return R.ok("登录成功");
         } else {
             token.clear();
+            webSocket.sendMessage("登录失败！");
             return R.fail("登录失败");
         }
     }
