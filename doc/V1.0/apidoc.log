@@ -1,0 +1,24 @@
+���� 29, 2020 3:43:53 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: find java src paths:  [E:\�����ļ�\project\screw\src\main\java\]
+���� 29, 2020 3:43:53 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: project type not set, try to figure out...
+���� 29, 2020 3:43:53 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: start find controllers in path : E:\�����ļ�\project\screw\src\main\java\
+���� 29, 2020 3:43:54 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: find controller file : DemoController.java
+���� 29, 2020 3:43:54 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: start to parse controller file : DemoController.java
+���� 29, 2020 3:43:54 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: success to parse controller file : DemoController.java
+���� 29, 2020 3:43:54 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: generate api docs start...
+���� 29, 2020 3:43:54 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: start to generate docs for controller file : E:\�����ļ�\project\screw\src\main\java\com\atoz\screw\controller\DemoController.java
+���� 29, 2020 3:43:55 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: success to generate docs for controller file : E:\�����ļ�\project\screw\src\main\java\com\atoz\screw\controller\DemoController.java
+���� 29, 2020 3:43:55 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: generate index start !!!
+���� 29, 2020 3:43:55 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: generate index done !!!
+���� 29, 2020 3:43:55 ���� io.github.yedaxia.apidocs.LogUtils info
+��Ϣ: info: generate api docs done !!!

@@ -1,5 +1,5 @@
-create  database screw
-use screw
+create  database screw;
+use screw;
 
 create table sys_user
 (
