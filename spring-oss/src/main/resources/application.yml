@@ -1,0 +1,21 @@
+server:
+  port: 8800
+spring:
+  application:
+    name: aliyun-oss
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 30MB  #单个数据大小
+      max-request-size: 100MB #总数据大小
+
+
+aliyun:
+  #访问OSS的域名
+  endpoint: oss-cn-shanghai.aliyuncs.com
+  #阿里云key
+  accessKeyId: xxxxxx
+  #阿里云value
+  accessKeySecret: xxxxx
+  #管理所存储Object的存储空间名称
+  bucketName: xkkj-chenxing

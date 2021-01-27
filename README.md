@@ -236,5 +236,27 @@ management.endpoint.health.show-details=always
 编写自定义注解Log，通过在请求的controller方法上面添加log注解，输入部分数据，如何编写切面类，通过@Pointcut，@AfterReturning和@AfterThrowing
 来获取方法数据，或者方法异常信息，通过工具类获取请求的数据，和自定义注解定义的数据保存到实体，最后通过调用service方法，进行数据库储存操作，实现异步日志信息保存。
 
-
+# 7、创建了spring-oss项目，实现阿里云OSS对象图片储存
+导入pom依赖
+``` pom
+<!-- 图片上传 SDK 阿里云oss -->
+<dependency>
+    <groupId>com.aliyun.oss</groupId>
+    <artifactId>aliyun-sdk-oss</artifactId>
+    <version>3.10.2</version>
+</dependency>
+```
+然后配置yml文件
+``` yml
+aliyun:
+  #访问OSS的域名
+  endpoint: oss-cn-shanghai.aliyuncs.com
+  #阿里云key
+  accessKeyId: xxxxxx
+  #阿里云value
+  accessKeySecret: xxxxx
+  #管理所存储Object的存储空间名称
+  bucketName: xkkj-chenxing
+```
+通过阿里云提供的Api和自己写一些接口，实现图片上传，下载等等
 
